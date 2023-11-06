@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Contacts Manager</title>
+  <link rel="stylesheet" href="/doc/css/style.css">
+   <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/handlebars.js"></script>
+    <script src="/javascripts/main.js"></script>
+</head>
+<body>
+
+  <div id="contacts-container">
+    <h1>Contacts Manager</h1>
+    <button id="add-contact-btn">Add Contact</button>
+
+    <div id="contact-form" class="hidden" style='display:none'>
+      <h2>Add New Contact</h2>
+      <form id="add-contact-form">
+        <label for="full_name">Name:</label>
+        <input type="text" id="full_name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="phone_number">Phone:</label>
+        <input type="tel" id="phone_number" required>
+        
+        <label for="tags">Tags:</label>
+        <select id="tags" multiple>
+          <option value="work">Work</option>
+          <option value="business">Business</option>
+          <!-- Add more predefined tags as needed -->
+        </select>
+      
+        <label for="custom_tags">Custom Tags (comma-separated):</label>
+        <input type="text" id="custom_tags">
+
+        <button id='contactadd' type="submit">Add Contact</button>
+        <button type="button" id="cancel-btn">Cancel</button>
+      </form>
+    </div>
+    <div id='contact-window' style="display:block">
+      <ul id="contact-list" ></ul>
+    
+      <input type="text" id="search" placeholder="Search by name">
+      <select id="tag-filter">
+        <option value="all">All Tags</option>
+      </select>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
